@@ -1,0 +1,6 @@
+@tasks.map { |task|
+  {
+    :name => task[:name],
+    :done => task[:done]
+  }
+}
