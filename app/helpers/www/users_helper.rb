@@ -1,2 +1,0 @@
-module Www::UsersHelper
-end

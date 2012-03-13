@@ -1,2 +1,0 @@
-module Www::ListsHelper
-end

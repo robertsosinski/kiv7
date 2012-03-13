@@ -1,0 +1,2 @@
+module Root::SessionsHelper
+end

@@ -1,0 +1,14 @@
+<p>list</p>
+<%= image_tag "rails.png" %>
+
+
+<script type="text/javascript">
+  $(function() {
+    window.currentViewModel = $.extend(
+      new ApplicationViewModel(),
+      new Root.NamespaceViewModel(),
+      new Root.ListsViewModel()
+    );
+    ko.applyBindings(currentViewModel);
+  });
+</script>

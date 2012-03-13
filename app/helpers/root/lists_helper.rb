@@ -1,0 +1,2 @@
+module Root::ListsHelper
+end

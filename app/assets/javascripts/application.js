@@ -7,9 +7,14 @@
 // lib
 //= require cookies
 //= require api
+//= require ko/bindingHandlers
 
 // app/javascripts
 //= require_self
-//= require www/models/task
-//= require www/view_models/application_view_model
-//= require www/view_models/lists_view_model
+//= require models/v1/task
+//= require view_models/application_view_model
+//= require view_models/root/namespace_view_model
+//= require view_models/root/lists_view_model
+
+window.Root = {};
+window.V1   = {};
