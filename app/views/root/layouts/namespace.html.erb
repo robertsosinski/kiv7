@@ -3,9 +3,14 @@
 <head>
   <title>Kiv7</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "root", :media => "all" %>
+
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "root" %>
+  
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <%= yield %>

@@ -11,14 +11,6 @@
 
 // app
 //= require_self
-
-// app/models
 //= require models/v1
 //= require_tree ./models/v1
-
-// app/view_models
 //= require view_models/application_view_model
-//= require view_models/admin/namespace_view_model
-//= require_tree ./view_models/admin
-//= require view_models/root/namespace_view_model
-//= require_tree ./view_models/root

@@ -3,9 +3,14 @@
 <head>
   <title>Admin</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "admin" %>
+  
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <%= yield %>
