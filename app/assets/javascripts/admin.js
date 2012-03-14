@@ -1,3 +1,5 @@
 //= require_self
-//= require view_models/admin/namespace_view_model
-//= require_tree ./view_models/admin
+//= require admin/namespace_view_model
+//= require_tree ./admin
+
+window.Admin = {};
