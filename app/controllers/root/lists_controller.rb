@@ -1,4 +1,4 @@
 class Root::ListsController < Root::NamespaceController
-  def index
+  def show
   end
 end
