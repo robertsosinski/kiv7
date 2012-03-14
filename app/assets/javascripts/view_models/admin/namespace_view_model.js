@@ -1,7 +1,7 @@
-window.Root = {
+window.Admin = {
   NamespaceViewModel: function() {
     var self = this;
     
-    self.loginName = "Alice Android";
+    self.adminName = "Mrs. Admin";
   }
 }

@@ -14,7 +14,7 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'rspec-rails', '~> 2.6'
+  gem 'rspec-rails', :git => 'git://github.com/rspec/rspec-rails.git', :ref => 'v2.9.0.rc2'
   gem 'ruby-debug'
 end
 

@@ -1,6 +1,8 @@
-@tasks.map { |task|
-  {
-    :name => task[:name],
-    :done => task[:done]
+json = {
+  :size => @tasks.size,
+  :data => @tasks.map { |task|
+    render task
+    # you can also be explicit by doing...
+    # render :partial => 'task', :locals => {:task => task}
   }
 }

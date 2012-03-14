@@ -1,3 +1,14 @@
+GIT
+  remote: git://github.com/rspec/rspec-rails.git
+  revision: 7d4e1e7b927c8cb02d8cc2060ae228bee9550912
+  ref: v2.9.0.rc2
+  specs:
+    rspec-rails (2.9.0.rc2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec (= 2.9.0.rc2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -92,19 +103,14 @@ GEM
       jeweler
       rails (> 3.0.0)
       rjson
-    rspec (2.7.0)
-      rspec-core (~> 2.7.0)
-      rspec-expectations (~> 2.7.0)
-      rspec-mocks (~> 2.7.0)
-    rspec-core (2.7.1)
-    rspec-expectations (2.7.0)
-      diff-lcs (~> 1.1.2)
-    rspec-mocks (2.7.0)
-    rspec-rails (2.7.0)
-      actionpack (~> 3.0)
-      activesupport (~> 3.0)
-      railties (~> 3.0)
-      rspec (~> 2.7.0)
+    rspec (2.9.0.rc2)
+      rspec-core (= 2.9.0.rc2)
+      rspec-expectations (= 2.9.0.rc2)
+      rspec-mocks (= 2.9.0.rc2)
+    rspec-core (2.9.0.rc2)
+    rspec-expectations (2.9.0.rc2)
+      diff-lcs (~> 1.1.3)
+    rspec-mocks (2.9.0.rc2)
     ruby-debug (0.10.4)
       columnize (>= 0.1)
       ruby-debug-base (~> 0.10.4.0)
@@ -136,6 +142,6 @@ DEPENDENCIES
   pg
   rails (= 3.2.2)
   rjson
-  rspec-rails (~> 2.6)
+  rspec-rails!
   ruby-debug
   uglifier

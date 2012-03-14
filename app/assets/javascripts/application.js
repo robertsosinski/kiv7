@@ -9,12 +9,16 @@
 //= require api
 //= require ko/bindingHandlers
 
-// app/javascripts
+// app
 //= require_self
-//= require models/v1/task
-//= require view_models/application_view_model
-//= require view_models/root/namespace_view_model
-//= require view_models/root/lists_view_model
 
-window.Root = {};
-window.V1   = {};
+// app/models
+//= require models/v1
+//= require_tree ./models/v1
+
+// app/view_models
+//= require view_models/application_view_model
+//= require view_models/admin/namespace_view_model
+//= require_tree ./view_models/admin
+//= require view_models/root/namespace_view_model
+//= require_tree ./view_models/root

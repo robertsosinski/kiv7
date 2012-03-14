@@ -1,0 +1,4 @@
+{
+  :name => task[:name],
+  :done => task[:done],
+}

@@ -1,0 +1,12 @@
+<h1>Cool Stats</h1>
+
+<script type="text/javascript">
+  $(function() {
+    window.currentViewModel = $.extend(
+      new ApplicationViewModel(),
+      new Admin.NamespaceViewModel(),
+      new Admin.StatsViewModel()
+    );
+    ko.applyBindings(currentViewModel);
+  });
+</script>
