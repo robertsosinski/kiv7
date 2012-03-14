@@ -64,7 +64,7 @@ GEM
       rdoc
     journey (1.0.3)
     json (1.6.5)
-    less (2.0.9)
+    less (2.0.10)
       commonjs (~> 0.2.0)
       therubyracer (~> 0.9.9)
     libv8 (3.3.10.4)
@@ -144,7 +144,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   factory_girl_rails
   json
-  less
+  less (~> 2.0.10)
   pg
   rails (= 3.2.2)
   rjson

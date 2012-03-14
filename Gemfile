@@ -11,7 +11,7 @@ gem 'rjson'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :assets do
-  gem 'less'
+  gem 'less', '~> 2.0.10'
   gem 'uglifier'
 end
 
