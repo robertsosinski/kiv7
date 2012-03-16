@@ -7,8 +7,8 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'json'
 gem 'rjson'
-
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'whenever', :require => false
 
 group :assets do
   gem 'less', '~> 2.0.10'

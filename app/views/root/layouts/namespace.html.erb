@@ -9,8 +9,35 @@
 </head>
 
 <body>
-
-<%= yield %>
-
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="#">Kiv7</a>
+        <ul class="nav">
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Lists</a>
+          </li>
+          <li>
+            <a href="#">Account</a>
+          </li>
+        </ul>
+        <form class="navbar-search pull-left">
+          <input type="text" class="search-query" placeholder="Filter Tasks">
+        </form>
+        <ul class="nav pull-right">
+          <li>
+            <a href="#">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="content" class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

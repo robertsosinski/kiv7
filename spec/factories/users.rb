@@ -1,10 +1,6 @@
 FactoryGirl.define  do
-  sequence :name do |n|
-    "android-#{n}"
-  end
-  
   factory :user do
-    name 
+    name 'alice'
     password 'hushhush'
     password_confirmation {|u| u.password}
   end

@@ -5,7 +5,9 @@ class CreateUsers < ActiveRecord::Migration
         id serial primary key,
         name varchar(10) not null,
         admin boolean default false not null,
-        password_digest varchar(60) not null
+        password_digest varchar(60) not null,
+        created_at timestamp,
+        updated_at timestamp
       );
       
       create unique index users_name_idx on users (name);

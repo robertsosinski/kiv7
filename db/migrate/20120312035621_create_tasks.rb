@@ -5,7 +5,9 @@ class CreateTasks < ActiveRecord::Migration
         id serial primary key,
         user_id int not null references users,
         name varchar,
-        done boolean default false not null
+        done boolean default false not null,
+        created_at timestamp,
+        updated_at timestamp
       );
     SQL
   end

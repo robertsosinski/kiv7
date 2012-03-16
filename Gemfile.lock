@@ -42,6 +42,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
+    chronic (0.6.7)
     columnize (0.3.4)
     commonjs (0.2.0)
       therubyracer (~> 0.9.9)
@@ -136,6 +137,11 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    warden (1.1.1)
+      rack (>= 1.0)
+    whenever (0.7.3)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
 
 PLATFORMS
   ruby
@@ -151,3 +157,5 @@ DEPENDENCIES
   rspec-rails!
   ruby-debug
   uglifier
+  warden (~> 1.1.1)
+  whenever

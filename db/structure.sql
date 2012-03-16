@@ -45,7 +45,9 @@ CREATE TABLE tasks (
     id integer NOT NULL,
     user_id integer NOT NULL,
     name character varying,
-    done boolean DEFAULT false NOT NULL
+    done boolean DEFAULT false NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
 );
 
 
@@ -76,7 +78,9 @@ CREATE TABLE users (
     id integer NOT NULL,
     name character varying(10) NOT NULL,
     admin boolean DEFAULT false NOT NULL,
-    password_digest character varying(60) NOT NULL
+    password_digest character varying(60) NOT NULL,
+    created_at timestamp without time zone,
+    updated_at timestamp without time zone
 );
 
 

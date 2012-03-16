@@ -7,4 +7,10 @@ class User < ActiveRecord::Base
   
   validates :name, :presence => true
   validates :password, :confirmation => true
+  
+  def self.authenticate(name, password)
+    find_by_name!(name).authenticate(password)
+  rescue
+    false
+  end
 end
