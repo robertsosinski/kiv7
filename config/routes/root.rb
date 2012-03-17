@@ -3,7 +3,7 @@ Kiv7::Application.routes.draw do
     root :to => 'pages#welcome'
     
     # routes all pages to an appropriate template
-    match 'pages/:action', :controller => 'pages'
+    match 'pages/:action', :controller => 'pages', :as => :pages
     
     resource :sessions
     resource :users

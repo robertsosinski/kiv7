@@ -7,8 +7,11 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'json'
 gem 'rjson'
-gem 'devise', '~> 2.0.4'
+
+gem 'warden', '~> 1.1.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+gem 'simple_form', '~> 2.0.1'
 gem 'whenever', :require => false
 
 group :assets do

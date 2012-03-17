@@ -4,9 +4,9 @@ describe User do
   describe '.new' do
     let(:user) { User.new }
     
-    context 'with a name, password and password_confirmation' do
+    context 'with a username, password and password_confirmation' do
       before do
-        user.name = 'alice'
+        user.username = 'alice'
         user.password = 'hushhush'
         user.password_confirmation = 'hushhush'
       end
@@ -20,9 +20,9 @@ describe User do
       end
     end
     
-    context 'with a name only' do
+    context 'with a username only' do
       before do
-        user.name = 'alice'
+        user.username = 'alice'
       end
       
       it 'should not be valid' do
@@ -30,9 +30,9 @@ describe User do
       end
     end
     
-    context 'with a name, password and wrong password_confirmation' do
+    context 'with a username, password and wrong password_confirmation' do
       before do
-        user.name = 'alice'
+        user.username = 'alice'
         user.password = 'hushhush'
         user.password_confirmation = 'nopenope'
       end
@@ -43,10 +43,10 @@ describe User do
     end
     
     context 'when mass assigned whitelisted attributes' do
-      let(:user) { User.new(:name => 'alice', :password => 'hushhush', :password_confirmation => 'hushhush') }
+      let(:user) { User.new(:username => 'alice', :password => 'hushhush', :password_confirmation => 'hushhush') }
 
       it 'those attributes should be set' do
-        user.name.should == 'alice'
+        user.username.should == 'alice'
         user.password.should == 'hushhush'
         user.password_confirmation.should == 'hushhush'
       end
@@ -62,7 +62,7 @@ describe User do
   describe '.authenticate' do
     before do
       @alice = Factory(:user)
-      @bob   = Factory(:user, :name => 'bob', :password => 'password')
+      @bob   = Factory(:user, :username => 'bob', :password => 'password')
     end
     
     let(:alice) { @alice }

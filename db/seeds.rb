@@ -1,6 +1,6 @@
-alice = User.create(:name => 'alice', :password => 'hushhush')
+alice = User.create(:username => 'alice', :password => 'hushhush')
 
-bob = User.new(:name => 'bob', :password => 'password')
+bob = User.new(:username => 'bob', :password => 'password')
 bob.admin = true
 bob.save
 

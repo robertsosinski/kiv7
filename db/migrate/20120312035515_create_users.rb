@@ -3,7 +3,7 @@ class CreateUsers < ActiveRecord::Migration
     execute <<-SQL
       create table users (
         id serial primary key,
-        name varchar(10) unique not null,
+        username varchar(10) unique not null,
         password_digest varchar(60) not null,
         admin boolean default false not null,
         created_at timestamp,

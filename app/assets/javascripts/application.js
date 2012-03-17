@@ -4,6 +4,7 @@
 //= require knockout-2.0.0
 
 //= require cookies
+//= require rails
 //= require ko
 
 //= require_self
