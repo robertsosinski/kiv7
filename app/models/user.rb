@@ -5,12 +5,10 @@ class User < ActiveRecord::Base
   
   has_many :tasks
   
-  validates :name, :presence => true
-  validates :password, :confirmation => true
+  validates :name, :presence => true, 
+                   :uniqueness => true, 
+                   :format => { :with => /^[a-z0-9]{3,10}$/, :message => "must be 3 to 10 lower-case letters or numbers" }
   
-  def self.authenticate(name, password)
-    find_by_name!(name).authenticate(password)
-  rescue
-    false
-  end
+  validates :password, :confirmation => true,
+                       :format => { :with => /^([\x20-\x7E]){6,}$/, :message => "must be 3 or more characters" }
 end

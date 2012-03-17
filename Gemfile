@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'json'
 gem 'rjson'
+gem 'devise', '~> 2.0.4'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'whenever', :require => false
 

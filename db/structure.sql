@@ -71,14 +71,25 @@ ALTER SEQUENCE tasks_id_seq OWNED BY tasks.id;
 
 
 --
+-- Name: test; Type: TABLE; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE TABLE test (
+    a integer NOT NULL,
+    b integer,
+    c integer
+);
+
+
+--
 -- Name: users; Type: TABLE; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE TABLE users (
     id integer NOT NULL,
     name character varying(10) NOT NULL,
-    admin boolean DEFAULT false NOT NULL,
     password_digest character varying(60) NOT NULL,
+    admin boolean DEFAULT false NOT NULL,
     created_at timestamp without time zone,
     updated_at timestamp without time zone
 );
@@ -126,6 +137,30 @@ ALTER TABLE ONLY tasks
 
 
 --
+-- Name: test_b_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY test
+    ADD CONSTRAINT test_b_key UNIQUE (b);
+
+
+--
+-- Name: test_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY test
+    ADD CONSTRAINT test_pkey PRIMARY KEY (a);
+
+
+--
+-- Name: users_name_key; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
+--
+
+ALTER TABLE ONLY users
+    ADD CONSTRAINT users_name_key UNIQUE (name);
+
+
+--
 -- Name: users_pkey; Type: CONSTRAINT; Schema: public; Owner: -; Tablespace: 
 --
 
@@ -134,17 +169,17 @@ ALTER TABLE ONLY users
 
 
 --
+-- Name: test_c_key; Type: INDEX; Schema: public; Owner: -; Tablespace: 
+--
+
+CREATE UNIQUE INDEX test_c_key ON test USING btree (c);
+
+
+--
 -- Name: unique_schema_migrations; Type: INDEX; Schema: public; Owner: -; Tablespace: 
 --
 
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
-
-
---
--- Name: users_name_idx; Type: INDEX; Schema: public; Owner: -; Tablespace: 
---
-
-CREATE UNIQUE INDEX users_name_idx ON users USING btree (name);
 
 
 --
