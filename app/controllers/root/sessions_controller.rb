@@ -8,14 +8,16 @@ class Root::SessionsController < Root::NamespaceController
   
   def create
     warden.authenticate!
+    flash[:success] = "Welcome back #{warden.user.username}."
     
-    render :text =>  session.inspect
+    redirect_to lists_path
   end
   
   def destroy
     warden.logout
+    flash[:notice] = "Thanks for dropping by."
     
-    render :text =>  session.inspect
+    redirect_to root_path
   end
   
   def failure

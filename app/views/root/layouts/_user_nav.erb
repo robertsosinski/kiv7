@@ -3,12 +3,12 @@
     <%= link_to "Kiv7", root_path, :class => "brand" %>
     <ul class="nav">
       <li>
-        <%= link_to "About", pages_path(:action => :about) %>
+        <%= link_to "Lists", lists_path %>
       </li>
     </ul>
     <ul class="nav pull-right">
       <li>
-        <%= link_to "Logout", sessions_path, :method => :delete %>
+        <%= link_to "Logout (#{warden.user.username})", sessions_path, :method => :delete %>
       </li>
     </ul>
   </div>

@@ -32,6 +32,21 @@
     <% end %>
     
     <%= yield %>
+    
+    <footer class="footer">
+      <%= link_to "Kiv7 - The Simple Task List", root_path, :class => "pull-right" %>
+      <p>Built by
+         <a href="http://www.robertsosinski.com" target="_blank">Robert Sosinski</a> using 
+         <a href="http://rubyonrails.org/">Ruby on Rails</a>, 
+         <a href="http://jquery.com/">jQuery</a>, 
+         <a href="http://knockoutjs.com/">Knockout</a>, 
+         <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>,
+         <a href="http://www.modrails.com/">Passenger</a> and
+         <a href="http://postgresql.org/">Postgres</a>.
+      </p>
+      <p>All code is open sourced using an <a href="http://github.com/robertsosinski/kiv7/blob/master/LICENSE">MIT license</a> and can be found on <a href="http://github.com/robertsosinski/kiv7">GitHub</a>.</p>
+      <p><strong>NOTICE:</strong> This website is a technology demo, any data you put into this application can be lost at any time.</p>
+    </footer>
   </div>
 </body>
 </html>
