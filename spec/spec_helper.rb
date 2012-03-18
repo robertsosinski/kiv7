@@ -30,4 +30,9 @@ RSpec.configure do |config|
   # automatically. This will be the default behavior in future versions of
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
+  
+  # Setup warden for controller specs
+  # config.include Rack::Test::Methods
+  config.include Warden::Test::Helpers
+  config.after { Warden.test_reset! }
 end

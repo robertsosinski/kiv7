@@ -1,6 +1,6 @@
 class Root::SessionsController < Root::NamespaceController
   def show
-    render :text =>  session.inspect
+    render :json =>  session
   end
   
   def new

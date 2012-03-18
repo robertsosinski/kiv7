@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   def warden
-    env['warden']
+    request.env['warden']
   end
   helper_method :warden
 end
