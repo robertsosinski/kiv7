@@ -1,4 +1,5 @@
 {
-  :name => task[:name],
-  :done => task[:done],
+  :id => task.id,
+  :name => task.name,
+  :done => task.done
 }

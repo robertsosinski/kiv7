@@ -14,5 +14,8 @@ class Root::UsersController < Root::NamespaceController
     else
       render :new
     end
+  rescue
+    flash.now[:error] = "Something went wrong, please try again."
+    render :new
   end
 end

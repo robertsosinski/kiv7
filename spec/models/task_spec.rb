@@ -16,30 +16,10 @@ describe Task do
     
     context 'when toggled' do
       before do
-        open_task.toggle!
+        open_task.toggle
       end
       
       it 'should be done' do
-        open_task.done.should be_true
-      end
-    end
-    
-    context 'when marked_open!' do
-      before do
-        open_task.mark_open!
-      end
-      
-      it 'should be open' do
-        open_task.done.should be_false
-      end
-    end
-    
-    context 'when marked_done!' do
-      before do
-        open_task.mark_done!
-      end
-      
-      it 'should be open' do
         open_task.done.should be_true
       end
     end
@@ -56,31 +36,11 @@ describe Task do
     
     context 'when toggled' do
       before do
-        done_task.toggle!
+        done_task.toggle
       end
       
       it 'should be done' do
         open_task.done.should be_false
-      end
-    end
-    
-    context 'when marked_open!' do
-      before do
-        done_task.mark_open!
-      end
-      
-      it 'should be open' do
-        done_task.done.should be_false
-      end
-    end
-    
-    context 'when marked_done!' do
-      before do
-        done_task.mark_done!
-      end
-      
-      it 'should be open' do
-        done_task.done.should be_true
       end
     end
   end

@@ -1,10 +1,33 @@
 <div class="page-header">
   <h1>
-    My List
-    <small>of things to do</small>
+    Your List
+    <small>
+      <span data-bind="visible: incompleteTasks().length > 0">
+        has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+      </span>
+      
+      <span data-bind="visible: incompleteTasks().length == 0">is complete</span>
+    </small>
   </h1>
 </div>
 
+<form id="new-task" data-bind="submit: createTask">
+  <span class="input-append">
+    <input class="span8" data-bind="value: newTask.name" placeholder="What needs to be done?" /><button class="add-on btn" type="submit"><i class="icon-plus-sign"></i> Add</button>
+  </span>
+</form>
+
+<hr />
+
+<ul id="tasks" data-bind="foreach: tasks">
+  <li data-bind="event: { mouseover: $root.giveFocus, mouseout: $root.looseFocus }">
+    
+    <span class="input-prepend input-append">
+      <input class="add-on" type="checkbox" data-bind="checked: done, click: $root.toggleTask" /><input class="name span8" data-bind="value: name" /><a href="#" class="add-on btn" data-bind="visible: $root.currentFocus() == $data, click: $root.destroyTask"><i class="icon-minus-sign"></i> Delete</a>
+    <span>
+    
+  </li>
+</ul>
 
 <script type="text/javascript">
   $(function() {
