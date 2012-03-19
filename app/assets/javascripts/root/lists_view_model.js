@@ -21,16 +21,24 @@ Root.ListsViewModel = function() {
   
   self.newTask = {
     name: ko.observable()
-  }
+  };
+  
+  self.resetNewTask = function() {
+    self.newTask.name("")
+  };
   
   self.createTask = function() {
     Api.post("/v1/tasks", { task: ko.toJS(self.newTask) },
     function(task) {
       self.tasks.push(new Api.V1.Task(task));
-      self.newTask.name('');
+      self.newTask.name("");
     },
-    function(error) {
+    function() {
+      self.modal.header("Error");
       
+      $('#modal-alert').modal({
+        keyboard: true
+      });
     });
   };
   
@@ -41,17 +49,8 @@ Root.ListsViewModel = function() {
   };
   
   self.toggleTask = function(task) {
-    Api.put("/v1/tasks/" + task.id + "/toggle");
-    return true;
-  };
-  
-  self.currentFocus = ko.observable(null);
-  
-  self.giveFocus = function(item) {
-    self.currentFocus(item);
-  };
-  
-  self.looseFocus = function() {
-    self.currentFocus(null);
+    Api.put("/v1/tasks/" + task.id + "/toggle", function(data) {
+      task.done(data.done);
+    });
   };
 }

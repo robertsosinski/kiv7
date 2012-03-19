@@ -8,6 +8,7 @@ window.Api = {
     var defaults = {
       url: "/api" + path,
       dataType: "json",
+      error: function() { alert('wtf');},
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",

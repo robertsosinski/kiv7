@@ -9,9 +9,9 @@ class Api::V1::TasksController < Api::V1::VersionController
     @task = warden.user.tasks.create(params[:task])
     
     if @task.save
-      render :json => @task
+      render :json => @task, :status => 201
     else
-      render :json => @task.errors
+      render :json => @task.errors, :status => 422
     end
   end
   
