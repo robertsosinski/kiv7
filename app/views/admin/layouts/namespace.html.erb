@@ -9,8 +9,29 @@
 </head>
 
 <body>
-
-<%= yield %>
-
+  <div id="navbar" class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Admin", root_path, :class => "brand" %>
+        <ul class="nav">
+          <li>
+            <%= link_to "Lists", lists_path %>
+          </li>
+          <li>
+            <%= link_to "Admin", admin_stats_path %>
+          </li>
+        </ul>
+        <ul class="nav pull-right">
+          <li>
+            <%= link_to "Logout (#{warden.user.username})", sessions_path, :method => :delete %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="content" class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>

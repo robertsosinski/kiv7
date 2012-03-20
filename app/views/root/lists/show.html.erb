@@ -26,8 +26,7 @@
 
 <div id="tasks" class="control-group" data-bind="foreach: tasks">
   <span class="input-prepend">
-    <a href="#" class="add-on btn" data-bind="click: $root.toggleTask, visible: done"><i class="icon-star"></i></a>
-    <a href="#" class="add-on btn" data-bind="click: $root.toggleTask, visible: open"><i class="icon-star-empty"></i></a>
+    <a href="#" class="add-on btn" data-bind="click: $root.toggleTask"><i data-bind="star: done"></i></a>
     
     <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
     
@@ -37,10 +36,6 @@
 
 <script type="text/javascript">
   $(function() {
-    window.currentViewModel = $.extend(
-      new Root.NamespaceViewModel(),
-      new Root.ListsViewModel()
-    );
-    ko.applyBindings(currentViewModel);
+    ko.applyBindings(ko.currentViewModel = new Root.ListsViewModel());
   });
 </script>

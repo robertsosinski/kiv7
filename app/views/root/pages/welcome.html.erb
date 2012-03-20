@@ -1,6 +1,18 @@
-<div class="page-header">
-  <h1>
-    Welcome
-    <small>to a useful task-tracking application</small>
-  </h1>
+<div class="page-header no-border">
+  <div class="hero-unit">
+    <h1>Welcome!</h1>
+    <p>
+      This is a demo showcasing how open-source tools can be used to build a interactive web-based application.
+      Take a look at the page footer to see what projects make up this application and others like it.
+    </p>
+    <p>Feel free to sign up and take this thing for a spin.</p>
+    
+    <br />
+    
+    <p>
+      <%= link_to "Signup", new_users_path, :class => "btn btn-primary btn-large" %>
+      <span class="welcome-or">or</span>
+      <%= link_to "Login", new_sessions_path, :class => "btn btn-large" %>
+    </p>
+  </div>
 </div>

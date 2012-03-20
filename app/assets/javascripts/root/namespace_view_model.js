@@ -6,13 +6,12 @@ Root.NamespaceViewModel = function() {
     body: ko.observable()
   };
   
-  self.setModal = function(header, body) {
-    self.header(header);
-    self.body(body);
-  };
-  
-  self.resetModal = function() {
-    self.header("");
-    self.body("");
+  self.setModal = function(options) {
+    self.modal.header(options.header);
+    self.modal.body(options.body);
+    
+    $("#modal-error").modal({
+      keyboard: true
+    });
   };
 }

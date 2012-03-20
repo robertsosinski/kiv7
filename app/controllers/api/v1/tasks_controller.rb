@@ -11,7 +11,7 @@ class Api::V1::TasksController < Api::V1::VersionController
     if @task.save
       render :json => @task, :status => 201
     else
-      render :json => @task.errors, :status => 422
+      render :json => {:errors => @task.errors}, :status => 422
     end
   end
   

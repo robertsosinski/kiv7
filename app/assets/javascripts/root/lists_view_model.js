@@ -4,18 +4,18 @@ Root.ListsViewModel = function() {
   self.tasks = ko.observableArray([]);
   
   Api.get("/v1/tasks", function(json) {
-    self.tasks($.map(json.data, function(task) { return new Api.V1.Task(task) }))
+    self.tasks(_.map(json.data, function(task) { return new Api.V1.Task(task) }))
   });
   
   self.completedTasks = ko.computed(function() {
     return _.filter(self.tasks(), function(task) {
-      return task.done() 
+      return task.done();
     });
   });
   
   self.incompleteTasks = ko.computed(function() {
     return _.filter(self.tasks(), function(task) {
-      return !task.done() 
+      return !task.done();
     });
   });
   
@@ -24,7 +24,7 @@ Root.ListsViewModel = function() {
   };
   
   self.resetNewTask = function() {
-    self.newTask.name("")
+    self.newTask.name("");
   };
   
   self.createTask = function() {
@@ -33,12 +33,13 @@ Root.ListsViewModel = function() {
       self.tasks.push(new Api.V1.Task(task));
       self.newTask.name("");
     },
-    function() {
-      self.modal.header("Error");
+    function(error) {
+      var errors = _.reduce(error.errors, function(memo, attr) {
+         memo.push("Name " + attr);
+         return memo
+      }, []);
       
-      $('#modal-alert').modal({
-        keyboard: true
-      });
+      self.setModal({header: "Error", body: errors});
     });
   };
   
@@ -53,4 +54,6 @@ Root.ListsViewModel = function() {
       task.done(data.done);
     });
   };
-}
+};
+
+Root.ListsViewModel.prototype = new Root.NamespaceViewModel();

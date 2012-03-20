@@ -1,11 +1,12 @@
-<h1>Cool Stats</h1>
+<div class="page-header">
+  <h1>
+    Stats <small>are coming soon</small>
+  </h1>
+</div>
+
 
 <script type="text/javascript">
   $(function() {
-    window.currentViewModel = $.extend(
-      new Admin.NamespaceViewModel(),
-      new Admin.StatsViewModel()
-    );
-    ko.applyBindings(currentViewModel);
+    ko.applyBindings(ko.currentViewModel = new Admin.StatsViewModel());
   });
 </script>
