@@ -2,8 +2,8 @@ require 'spec_helper'
 
 describe Task do
   let(:user) { Factory(:user) }
-  let(:open_task) { Task.new(:user => user, :name => "wash dishes") }
-  let(:done_task) { Task.new(:user => user, :name => "iron clothes", :done => true) }
+  let(:open_task) { task = Task.new(:name => "wash dishes"); task.user = user; task }
+  let(:done_task) { task = Task.new(:name => "iron clothes", :done => true); task.user = user; task }
   
   describe 'open task' do
     it 'should have a name' do

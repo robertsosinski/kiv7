@@ -1,7 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :user
   
-  attr_accessible :name
+  attr_accessible :name, :done
   
   validates :name, :presence => true,
                    :uniqueness => { :scope => :user_id }
