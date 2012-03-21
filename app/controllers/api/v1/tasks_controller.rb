@@ -23,6 +23,14 @@ class Api::V1::TasksController < Api::V1::VersionController
   end
   
   def update
+    @task = warden.user.tasks.find(params[:id])
+    @task.name = params[:task][:name]
+    
+    if @task.save
+      render :json => @task, :status => 201
+    else
+      render :json => {:errors => @task.errors}, :status => 422
+    end
   end
   
   def destroy

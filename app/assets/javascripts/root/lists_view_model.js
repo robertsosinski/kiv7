@@ -23,10 +23,6 @@ Root.ListsViewModel = function() {
     name: ko.observable()
   };
   
-  self.resetNewTask = function() {
-    self.newTask.name("");
-  };
-  
   self.createTask = function() {
     Api.post("/v1/tasks", { task: ko.toJS(self.newTask) },
     function(task) {
@@ -34,24 +30,24 @@ Root.ListsViewModel = function() {
       self.newTask.name("");
     },
     function(error) {
-      var errors = _.reduce(error.errors, function(memo, attr) {
-         memo.push("Name " + attr);
-         return memo
-      }, []);
-      
-      self.setModal({header: "Error", body: errors});
+      self.setModal({header: "Error", body: error});
+    });
+  };
+  
+  self.toggleTask = function(task) {
+    Api.put("/v1/tasks/" + task.id + "/toggle");
+    task.done(!task.done());
+  };
+  
+  self.updateTask = function(task) {
+    Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)}, null, function(error) {
+      self.setModal({header: "Error", body: error});
     });
   };
   
   self.destroyTask = function(task) {
     Api.delete_("/v1/tasks/" + task.id, function() {
       self.tasks.remove(task);
-    });
-  };
-  
-  self.toggleTask = function(task) {
-    Api.put("/v1/tasks/" + task.id + "/toggle", function(data) {
-      task.done(data.done);
     });
   };
 };

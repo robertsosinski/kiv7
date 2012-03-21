@@ -7,10 +7,16 @@ Root.NamespaceViewModel = function() {
   };
   
   self.setModal = function(options) {
-    self.modal.header(options.header);
-    self.modal.body(options.body);
+    var errors = _.reduce(options.body, function(memo, attr) {
+        return _.map(_.keys(attr), function(field) {
+            return field + " " + attr[field];
+        });
+    }, []);
     
-    $("#modal-error").modal({
+    self.modal.header(options.header);
+    self.modal.body(errors);
+    
+    $("#modal-alert").modal({
       keyboard: true
     });
   };

@@ -4,6 +4,7 @@ class Root::SessionsController < Root::NamespaceController
   end
   
   def new
+    redirect_to lists_path if warden.authenticated?
   end
   
   def create

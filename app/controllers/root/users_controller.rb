@@ -1,5 +1,7 @@
 class Root::UsersController < Root::NamespaceController
   def new
+    redirect_to lists_path if warden.authenticated?
+    
     @user = User.new
   end
   

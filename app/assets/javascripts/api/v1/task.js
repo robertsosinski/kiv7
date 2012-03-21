@@ -1,4 +1,6 @@
 Api.V1.Task = function(data) {
+  data = data || {};
+  
   var self = this;
   
   self.id   = data.id;

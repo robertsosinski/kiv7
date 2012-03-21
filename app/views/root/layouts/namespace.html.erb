@@ -33,23 +33,6 @@
     
     <%= yield %>
     
-    <div id="modals">
-      <div id="modal-error" class="modal" style="display: none;">
-        <div class="modal-header">
-          <a class="close" data-dismiss="modal">×</a>
-          <h3 data-bind="text: modal.header"></h3>
-        </div>
-        <div class="modal-body">
-          <ul data-bind="foreach: modal.body">
-            <li data-bind="text: $data"></li>
-          </ul>
-        </div>
-        <div class="modal-footer">
-          <a href="#" class="btn" data-dismiss="modal">Close</a>
-        </div>
-      </div>
-    </div>
-    
     <footer class="footer">
       <%= link_to "Kiv7 - The Simple Task List", root_path, :class => "pull-right" %>
       <p>Built by
@@ -65,6 +48,23 @@
       <p>All code is open sourced using an <a href="http://github.com/robertsosinski/kiv7/blob/master/LICENSE">MIT license</a> and can be found on <a href="http://github.com/robertsosinski/kiv7">GitHub</a>.</p>
       <p><strong>NOTICE:</strong> This website is a technology demo, any data you put into this application can be lost at any time.</p>
     </footer>
+  </div>
+  
+  <div id="modals">
+    <div id="modal-alert" class="modal" style="display: none;">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3 data-bind="text: modal.header"></h3>
+      </div>
+      <div class="modal-body">
+        <ul data-bind="foreach: modal.body">
+          <li data-bind="text: $data"></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>

@@ -19,10 +19,6 @@ group :assets do
   gem 'uglifier'
 end
 
-group :test, :development do
-  gem 'ruby-debug'
-end
-
 group :test do
   gem 'rspec-rails', :git => 'git://github.com/rspec/rspec-rails.git', :ref => 'v2.9.0.rc2'
   gem 'factory_girl_rails'
