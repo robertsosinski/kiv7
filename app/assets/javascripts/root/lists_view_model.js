@@ -40,9 +40,11 @@ Root.ListsViewModel = function() {
   };
   
   self.updateTask = function(task) {
-    Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)}, null, function(error) {
-      self.setModal({header: "Error", body: error});
-    });
+    if (!task.name.hasError()) {
+      Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)}, null, function(error) {
+        self.setModal({header: "Error", body: error});
+      });
+    }
   };
   
   self.destroyTask = function(task) {

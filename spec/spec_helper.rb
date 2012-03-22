@@ -31,8 +31,6 @@ RSpec.configure do |config|
   # rspec-rails.
   config.infer_base_class_for_anonymous_controllers = false
   
-  # Setup warden for controller specs
-  # config.include Rack::Test::Methods
-  config.include Warden::Test::Helpers
-  config.after { Warden.test_reset! }
+  # Include additional http response matchers
+  config.include HttpResponseMatchers
 end

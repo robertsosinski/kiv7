@@ -18,7 +18,9 @@
       <a href="#" class="add-on btn" data-bind="click: createTask"><i class="icon-plus"></i></a>
       <a href="#" class="add-on btn" data-bind="click: function() { newTask.name(''); }"><i class="icon-repeat"></i></a>
       
-      <input class="span11" data-bind="value: newTask.name" placeholder="What needs to be done?" />
+      <div class="control-group">
+        <input class="span11" data-bind="value: newTask.name" placeholder="What needs to be done?" />
+      </dvi>
     </span>
   </form>
 
@@ -30,7 +32,9 @@
     
     <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
     
-    <input class="name span11" data-bind="value: name, event: { change: $root.updateTask }" />
+    <div class="control-group" data-bind="css: { error: name.hasError }">
+      <input class="name span11" data-bind="value: name, event: { change: $root.updateTask }, attr: { placeholder: name.errorMessage }" />
+    </div>
   </span>
 </div>
 

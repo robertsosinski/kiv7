@@ -61,7 +61,7 @@ describe User do
   
   describe '.authenticate' do
     before do
-      @alice = Factory(:user)
+      @alice = Factory(:user, :username => 'alice')
       @bob   = Factory(:user, :username => 'bob', :password => 'password')
     end
     

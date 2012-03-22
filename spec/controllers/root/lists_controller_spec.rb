@@ -1,10 +1,12 @@
 require 'spec_helper'
 
 describe Root::ListsController do
+  include MockWarden
+  
   describe '#show' do
     context 'when logged in' do
       before do
-        login_as "alice"
+        logged_in_as Factory.build(:user)
         get :show
       end
       
@@ -13,14 +15,15 @@ describe Root::ListsController do
       end
     end
     
-    # context 'when not logged in' do
-    #   before do
-    #     get :show
-    #   end
-    #   
-    #   it 'should redirect the user to the login page' do
-    #     response.should be_redirect
-    #   end
-    # end
+    context 'when not logged in' do
+      before do
+        not_logged_in
+        get :show
+      end
+      
+      it 'should redirect the user to the login page' do
+        response.should be_redirect
+      end
+    end
   end
 end

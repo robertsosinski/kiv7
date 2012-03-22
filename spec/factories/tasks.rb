@@ -1,5 +1,5 @@
 FactoryGirl.define do
   factory :task do
-    association :user
+    sequence(:name) { |n| puts 'x'; "task#{n}" }
   end
 end
