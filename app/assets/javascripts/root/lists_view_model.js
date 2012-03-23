@@ -4,7 +4,9 @@ Root.ListsViewModel = function() {
   self.tasks = ko.observableArray([]);
   
   Api.get("/v1/tasks", function(json) {
-    self.tasks(_.map(json.data, function(task) { return new Api.V1.Task(task) }))
+    self.tasks(_.map(json.data, function(task) { 
+      return new Api.V1.Task(task, {scope: self.tasks}) 
+    }));
   });
   
   self.completedTasks = ko.computed(function() {
@@ -26,7 +28,7 @@ Root.ListsViewModel = function() {
   self.createTask = function() {
     Api.post("/v1/tasks", { task: ko.toJS(self.newTask) },
     function(task) {
-      self.tasks.push(new Api.V1.Task(task));
+      self.tasks.unshift(new Api.V1.Task(task, {scope: self.tasks}));
       self.newTask.name("");
     },
     function(error) {
@@ -41,9 +43,7 @@ Root.ListsViewModel = function() {
   
   self.updateTask = function(task) {
     if (!task.name.hasError()) {
-      Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)}, null, function(error) {
-        self.setModal({header: "Error", body: error});
-      });
+      Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)})
     }
   };
   
