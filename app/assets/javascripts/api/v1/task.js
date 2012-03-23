@@ -5,16 +5,13 @@ Api.V1.Task = function(data, opts) {
     
   self.id   = data.id;
   self.name = ko.observable(data.name).extend({
-    presence: "Task name is required", 
-    unique: {
-      scope: opts.scope,
-      errorMessage: "Task name must be unique"
-    }
-  });
+                required: true,
+                unique: opts.scope,
+                logged: "name"
+              });
+  
   self.done = ko.observable(data.done);
   self.open = ko.computed(function() { return !self.done(); });
-  
-  self.name.hasError = ko.computed(function() {
-    return self.name.notPresent() || self.name.notUnique();
-  });
 };
+
+Api.V1.Task.prototype = new Api.V1.Base();

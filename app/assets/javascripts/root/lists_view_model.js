@@ -42,7 +42,7 @@ Root.ListsViewModel = function() {
   };
   
   self.updateTask = function(task) {
-    if (!task.name.hasError()) {
+    if (task.name.isValid()) {
       Api.put("/v1/tasks/" + task.id, {task: ko.toJS(task)})
     }
   };
