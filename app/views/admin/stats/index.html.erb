@@ -4,13 +4,36 @@
   </h1>
 </div>
 
-<ul data-bind="template: { name: 'taskList' }"></ul>
+<!-- ------------------------------------------------------------------------------------------ -->
 
-<script type="text/html" id="taskList">
-  <@ _.each(stats(), function(stat) { @>
-    <li><i data-bind="css: { 'icon-ok': stat.up, 'icon-remove': !stat.up }"></i> <span><@= stat.day @></span></li>
-  <@ }) @>
+<h2>With Native Templates</h2>
+<ul data-bind="template: { name: 'nativeTaskList', foreach: stats }"></ul>
+
+<script type="text/html" id="nativeTaskList">
+  <li><i data-bind="css: { 'icon-ok': up, 'icon-remove': !up }"></i> <span data-bind="text: day"></span></li>
 </script>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+<h2>With Underscore Templates</h2>
+<ul data-bind="template: { name: 'underscoreTaskList' }"></ul>
+
+<script type="text/html" id="underscoreTaskList">
+  <@ _.each(stats(), function(stat) { @>
+    <li><i class="<@= stat.up ? 'icon-ok' : 'icon-remove' @>"></i> <span><@= stat.day @></span></li>
+  <@ }); @>
+</script>
+
+<!-- ------------------------------------------------------------------------------------------ -->
+
+<h2>With Both Underscore and Native Templates</h2>
+<ul data-bind="template: { name: 'mixedTaskList', foreach: stats }"></ul>
+
+<script type="text/html" id="mixedTaskList">
+  <li><i data-bind="css: { 'icon-ok': up, 'icon-remove': !up }"></i> <span><@= day @></span></li>
+</script>
+
+<!-- ------------------------------------------------------------------------------------------ -->
 
 <script type="text/javascript">
   $(function() {
