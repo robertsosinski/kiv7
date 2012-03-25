@@ -2,6 +2,6 @@ window.Admin = {
   NamespaceViewModel: function() {
     var self = this;
     
-    self.adminName = "Mrs. Admin";
+    self.admin = true;
   }
 }
