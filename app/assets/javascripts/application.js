@@ -6,6 +6,7 @@
 
 //= require cookies
 //= require rails
+//= require api
 //= require ko
 
 //= require_self

@@ -1,45 +1,45 @@
-<div class="page-header">
-  <h1>
-    Your List
-    <small>
-      <span data-bind="visible: incompleteTasks().length > 0">
-        have <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+<div id="list-view">
+  <div class="page-header">
+    <h1>
+      Your List
+      <small>
+        <span data-bind="visible: incompleteTasks().length > 0">
+          has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+        </span>
+      
+        <span data-bind="visible: incompleteTasks().length == 0">is complete</span>
+      </small>
+    </h1>
+  </div>
+
+  <div class="control-group">
+
+    <form id="new-task" data-bind="submit: createTask">
+      <span class="input-prepend">
+        <a href="#" class="add-on btn" data-bind="click: createTask"><i class="icon-plus"></i></a>
+        <a href="#" class="add-on btn" data-bind="click: function() { newTask.name(''); }"><i class="icon-repeat"></i></a>
+      
+        <div class="control-group">
+          <input class="span11" data-bind="value: newTask.name" placeholder="What needs to be done?" />
+        </div>
       </span>
-      
-      <span data-bind="visible: incompleteTasks().length == 0">is complete</span>
-    </small>
-  </h1>
-</div>
+    </form>
 
-<div class="control-group">
+  </div>
 
-  <form id="new-task" data-bind="submit: createTask">
+  <div id="tasks" class="control-group" data-bind="foreach: tasks">
     <span class="input-prepend">
-      <a href="#" class="add-on btn" data-bind="click: createTask"><i class="icon-plus"></i></a>
-      <a href="#" class="add-on btn" data-bind="click: function() { newTask.name(''); }"><i class="icon-repeat"></i></a>
-      
-      <div class="control-group">
-        <input class="span11" data-bind="value: newTask.name" placeholder="What needs to be done?" />
+      <a href="#" class="add-on btn" data-bind="click: $root.toggleTask"><i data-bind="star: done"></i></a>
+    
+      <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
+    
+      <div class="control-group" data-bind="valid: name.isValid">
+        <input class="name span11" placeholder="Enter a unique name!" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
       </div>
     </span>
-  </form>
-
+  </div>
 </div>
 
-<div id="tasks" class="control-group" data-bind="foreach: tasks">
-  <span class="input-prepend">
-    <a href="#" class="add-on btn" data-bind="click: $root.toggleTask"><i data-bind="star: done"></i></a>
-    
-    <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
-    
-    <div class="control-group" data-bind="valid: name.isValid">
-      <input class="name span11" placeholder="Enter a unique name!" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
-    </div>
-  </span>
-</div>
-
-<script type="text/javascript">
-  $(function() {
-    ko.applyBindings(ko.currentViewModel = new Root.ListsViewModel());
-  });
-</script>
+<% content_for :bindings do %>
+  ko.applyBindings(Root.listViewModel = new Root.ListViewModel(), ko.element("list-view"));
+<% end %>
