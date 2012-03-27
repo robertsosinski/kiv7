@@ -1,7 +1,5 @@
-window.Admin = {
-  NamespaceViewModel: function() {
-    var self = this;
-    
-    self.admin = true;
-  }
-}
+Admin.NamespaceViewModel = function() {
+  var self = this;
+  
+  self.admin = true;
+};
