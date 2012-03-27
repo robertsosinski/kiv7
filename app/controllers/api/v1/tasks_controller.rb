@@ -2,7 +2,7 @@ class Api::V1::TasksController < Api::V1::VersionController
   before_filter :check_authentication
   
   def index
-    @tasks = warden.user.tasks.order('id asc')
+    @tasks = warden.user.tasks.order('id desc')
   end
   
   def create
