@@ -1,4 +1,4 @@
-Root.ListViewModel = function() {
+Root.ListsViewModel = function() {
   var self = this;
   
   self.Task = function(data, opts) {
@@ -48,7 +48,7 @@ Root.ListViewModel = function() {
       self.newTask.name("");
     },
     function(error) {
-      Root.modalViewModel.render("Error", error);
+      Root.modalsViewModel.render("Error", error);
     });
   };
   
@@ -70,4 +70,4 @@ Root.ListViewModel = function() {
   };
 };
 
-Root.ListViewModel.prototype = new Root.NamespaceViewModel();
+Root.ListsViewModel.prototype = new Root.NamespaceViewModel();

@@ -1,4 +1,4 @@
-Root.ModalViewModel = function() {
+Root.ModalsViewModel = function() {
   var self = this;
 
   self.header = ko.observable();
@@ -23,7 +23,7 @@ Root.ModalViewModel = function() {
     $("#modal-view").modal({
       keyboard: true
     });
-  }
+  };
 };
 
-Root.ModalViewModel.prototype = new Root.NamespaceViewModel();
+Root.ModalsViewModel.prototype = new Root.NamespaceViewModel();

@@ -1,4 +1,4 @@
-<div id="list-view">
+<div id="lists-view">
   <div class="page-header">
     <h1>
       Your List
@@ -39,5 +39,5 @@
 </div>
 
 <% content_for :bindings do %>
-  ko.applyBindings(Root.listViewModel = new Root.ListViewModel(), ko.element("list-view"));
+  ko.applyBindings(Root.listsViewModel = new Root.ListsViewModel(), ko.element("lists-view"));
 <% end %>
