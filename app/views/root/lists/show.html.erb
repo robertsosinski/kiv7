@@ -6,14 +6,13 @@
         <span data-bind="visible: incompleteTasks().length > 0">
           has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
         </span>
-      
+        
         <span data-bind="visible: incompleteTasks().length == 0">is complete</span>
       </small>
     </h1>
   </div>
 
   <div class="control-group">
-
     <form id="new-task" data-bind="submit: createTask">
       <span class="input-prepend">
         <a href="#" class="add-on btn" data-bind="click: createTask"><i class="icon-plus"></i></a>
@@ -24,7 +23,6 @@
         </div>
       </span>
     </form>
-
   </div>
 
   <div id="tasks" class="control-group" data-bind="foreach: tasks">
