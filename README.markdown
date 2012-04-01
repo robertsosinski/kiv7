@@ -3,7 +3,7 @@ Introduction
 
 This is a demo showcasing how open-source tools can be used to build an interactive web-based application.
 
-Give this thing a spin by going to http://list.kiv7.com
+Give this thing a spin by going to http://kiv7.herokuapp.com
 
 Credits
 -------
