@@ -22,3 +22,5 @@ jp:
     lists:
       show:
         your_list: あなたのリスト
+        new_task:
+          placeholder: 何が行われる必要がある

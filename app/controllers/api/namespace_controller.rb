@@ -1,4 +1,6 @@
 class Api::NamespaceController < ApplicationController
+  before_filter :set_locale
+  
   rescue_from ActiveModel::MassAssignmentSecurity::Error do |error|
     render :json => {:error => "mass_assignment", :message => "The record had fields that should not have been defined."}, :status => 422 and return
   end
@@ -8,6 +10,10 @@ class Api::NamespaceController < ApplicationController
   end
   
   protected
+  
+  def set_locale
+    I18n.locale = request.headers['X-Locale'] || I18n.default_locale
+  end
   
   def check_authentication
     unless warden.authenticated?

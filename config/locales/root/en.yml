@@ -22,3 +22,5 @@ en:
     lists:
       show:
         your_list: Your List
+        new_task:
+          placeholder: What needs to be done?

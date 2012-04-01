@@ -6,11 +6,11 @@ Root.ModalsViewModel = function() {
   
   self.render = function(header, body) {
     // format errors as a list, eg::
-    //  from: {"errors":{"name":["cant be blank", "must be unique"]}}
+    //  from: {"errors":{"name":["Name cant be blank", "Name must be unique"]}}
     //    to: ["Name cant be blank", "Name must be unique"]
     var errors = _.reduce(body, function(memo, attr) {
       return _.map(_.keys(attr), function(field) {
-        return (field[0].toUpperCase() + field.slice(1)) + " " + attr[field];
+        return attr[field];
       });
     }, []);
     

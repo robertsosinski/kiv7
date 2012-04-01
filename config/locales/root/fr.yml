@@ -22,3 +22,5 @@ fr:
     lists:
       show:
         your_list: Votre Liste
+        new_task:
+          placeholder: Qu'est-ce qui doit être fait?
