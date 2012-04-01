@@ -50,5 +50,7 @@ en:
         list:
           name: Your List
           is_complete: is complete
+        task:
+          placeholder: Enter a unique name!
         new_task:
           placeholder: What needs to be done?

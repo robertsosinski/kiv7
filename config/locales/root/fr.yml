@@ -50,5 +50,7 @@ fr:
         list:
           name: Votre Liste
           is_complete: est terminée
+        task:
+          placeholder: Entrez un nom unique!
         new_task:
           placeholder: Qu'est-ce qui doit être fait?

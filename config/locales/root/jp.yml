@@ -50,5 +50,7 @@ jp:
         list:
           name: あなたのリスト
           is_complete: が完了しました
+        task:
+          placeholder: 一意の名前を入力してください！
         new_task:
           placeholder: 何が行われる必要がある

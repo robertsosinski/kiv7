@@ -39,7 +39,7 @@
       <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
     
       <div class="control-group" data-bind="valid: name.isValid">
-        <input class="name span11" placeholder="Enter a unique name!" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
+        <input class="name span11" placeholder="<%= t '.task.placeholder' %>" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
       </div>
     </span>
   </div>
