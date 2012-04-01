@@ -1,0 +1,10 @@
+jp:
+  simple_form:
+    labels:
+      user:
+        username: ユーザ名
+        password: パスワード
+
+      session:
+        username: ユーザ名
+        password: パスワード

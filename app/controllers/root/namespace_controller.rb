@@ -7,7 +7,7 @@ class Root::NamespaceController < ApplicationController
   protected
   
   def set_locale
-    I18n.locale = params[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale = params[:locale] || I18n.default_locale
   end
   
   # Used to set the locale namespace.

@@ -1,0 +1,18 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            name:
+              blank: Le nom est obligatoire
+              taken: Le nom doit être unique
+        user:
+          attributes:
+            username:
+              blank: Nom d'utilisateur est requis
+              taken: Nom d'utilisateur doit être unique
+              invalid: Nom d'utilisateur doit être atleast 6 lettres et des chiffres
+            password:
+              blank: Mot de passe est nécessaire
+              invalid: "Mot de passe doit être atleast 6 lettres, chiffres et caractères spéciaux"

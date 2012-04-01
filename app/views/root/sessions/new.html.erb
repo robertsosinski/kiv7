@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    Login
+    <%= t 'root.layouts.namespace.login' %>
     <small>if you already have an account</small>
   </h1>
 </div>
@@ -10,6 +10,6 @@
   <%= form.input :password %>
   
   <%= content_tag :div, :class => "form-actions" do %>
-    <%= form.button :submit, :value => "Login", :class => "btn-primary" %>
+    <%= form.button :submit, :value => t('root.layouts.namespace.login'), :class => "btn-primary" %>
   <% end %>
 <% end %>
