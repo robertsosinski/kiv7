@@ -1,0 +1,21 @@
+en:
+  root:
+    layouts:
+      namespace:
+        language: Language
+        lists: List
+        login: Login
+        logout: "Logout (%{username})"
+        signup: Signup
+    
+    pages:
+      welcome:
+        header: Welcome!
+        body: |
+          This is a __demo__ showcasing how open-source tools can be used to build an interactive web-based application. Take a look at the page footer to see what projects make up this application and others like it.
+          
+          Feel free to __sign up__ and take this thing for a spin.
+
+    lists:
+      show:
+        your_list: Your List

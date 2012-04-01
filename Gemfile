@@ -7,6 +7,7 @@ gem 'rails', '3.2.2'
 gem 'pg'
 gem 'json'
 gem 'rjson'
+gem 'redcarpet', '~> 2.1.1'
 
 gem 'warden', '~> 1.1.1'
 gem 'bcrypt-ruby', '~> 3.0.0'
