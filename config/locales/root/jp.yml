@@ -2,14 +2,18 @@ jp:
   root:
     words:
       or: または
+      task: タスク
+      tasks: タスク
       
     layouts:
       namespace:
         language: 言語
         lists: リスト
         login: ログイン
+        login_blurb: あなたは既にアカウントを持っている場合
         logout: "ログアウト (%{username})"
         signup: サインアップ
+        signup_blurb: あなたはまだアカウントをお持ちでいない場合
       
     pages:
       welcome:
@@ -21,6 +25,8 @@ jp:
 
     lists:
       show:
-        your_list: あなたのリスト
+        list:
+          name: あなたのリスト
+          is_complete: が完了しました
         new_task:
           placeholder: 何が行われる必要がある

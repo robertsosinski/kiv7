@@ -2,14 +2,18 @@ fr:
   root:
     words:
       or: ou
+      task: tâche
+      tasks: tâches
     
     layouts:
       namespace:
         language: Langue
         lists: Liste
         login: Vous connecter
+        login_blurb: si vous avez déjà un compte
         logout: "Déconnexion (%{username})"
         signup: Inscription
+        signup_blurb: si vous n'avez pas encore de compte
         
     pages:
       welcome:
@@ -21,6 +25,8 @@ fr:
 
     lists:
       show:
-        your_list: Votre Liste
+        list:
+          name: Votre Liste
+          is_complete: est terminée
         new_task:
           placeholder: Qu'est-ce qui doit être fait?

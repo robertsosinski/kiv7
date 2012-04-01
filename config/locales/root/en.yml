@@ -2,14 +2,18 @@ en:
   root:
     words:
       or: or
+      task: task
+      tasks: tasks
     
     layouts:
       namespace:
         language: Language
         lists: List
         login: Login
+        login_blurb: if you already have an account
         logout: "Logout (%{username})"
         signup: Signup
+        signup_blurb: if you don't have an account yet
     
     pages:
       welcome:
@@ -21,6 +25,8 @@ en:
 
     lists:
       show:
-        your_list: Your List
+        list:
+          name: Your List
+          is_complete: is complete
         new_task:
           placeholder: What needs to be done?
