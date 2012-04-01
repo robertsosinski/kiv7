@@ -1,12 +1,14 @@
 <div class="navbar-inner">
   <div class="container">
     <%= link_to "Kiv7", root_path, :class => "brand" %>
+    <%= render :partial => 'root/layouts/locale' %>
+
     <ul class="nav pull-right">
       <li>
-        <%= link_to "Login", new_sessions_path %>
+        <%= link_to t('root.layouts.namespace.login'), new_sessions_path %>
       </li>
       <li>
-        <%= link_to "Signup", new_users_path %>
+        <%= link_to t('root.layouts.namespace.signup'), new_users_path %>
       </li>
     </ul>
   </div>

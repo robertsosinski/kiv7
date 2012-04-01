@@ -1,13 +1,20 @@
 <div id="lists-view">
   <div class="page-header">
     <h1>
-      Your List
+      <%= t '.list.name' %>
       <small>
         <span data-bind="visible: incompleteTasks().length > 0">
-          has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+          <% case I18n.locale %>
+          <% when :en %>
+            has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+          <% when :fr %>
+            a <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'tâche  à gauche' : 'tâches laissées'"></span>
+          <% when :jp %>
+            には　<span data-bind="text: incompleteTasks().length"></span>　タスクがあります
+          <% end %>
         </span>
         
-        <span data-bind="visible: incompleteTasks().length == 0">is complete</span>
+        <span data-bind="visible: incompleteTasks().length == 0"><%= t '.list.is_complete' %></span>
       </small>
     </h1>
   </div>
@@ -19,7 +26,7 @@
         <a href="#" class="add-on btn" data-bind="click: function() { newTask.name(''); }"><i class="icon-repeat"></i></a>
       
         <div class="control-group">
-          <input class="span11" data-bind="value: newTask.name" placeholder="What needs to be done?" />
+          <input class="span11" data-bind="value: newTask.name" placeholder="<%= t '.new_task.placeholder' %>" />
         </div>
       </span>
     </form>
@@ -32,7 +39,7 @@
       <a href="#" class="add-on btn" data-bind="click: $root.destroyTask"><i class="icon-remove"></i></a>
     
       <div class="control-group" data-bind="valid: name.isValid">
-        <input class="name span11" placeholder="Enter a unique name!" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
+        <input class="name span11" placeholder="<%= t '.task.placeholder' %>" data-bind="value: name, disable: done, event: { change: $root.updateTask }" />
       </div>
     </span>
   </div>

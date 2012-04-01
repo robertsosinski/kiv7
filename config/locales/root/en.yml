@@ -1,0 +1,56 @@
+en:
+  root:
+    word:
+      or: or
+      task: task
+      tasks: tasks
+      
+    flash:
+      success:
+        welcome: "Hey %{username}, welcome to Kiv7!"
+        welcome_back: "Welcome back %{username}."
+      notice:
+        goodbye: Thanks for dropping by.
+        login_required: You have to login before you can access your task list.
+      error:
+        invalid_username_or_password: Invalid username or password.
+        something_else: Something went wrong, please try again.
+    
+    layouts:
+      namespace:
+        language: Language
+        lists: List
+        login: Login
+        login_blurb: if you already have an account
+        logout: "Logout (%{username})"
+        signup: Signup
+        signup_blurb: if you don't have an account yet
+        footer_title: Kiv7 - The Simple Task List
+        footer_blurb: |
+          Built by [Robert Sosinski](http://www.robertsosinski.com) using [Ruby on Rails](http://rubyonrails.org), [jQuery](http://jquery.com), [Knockout](http://knockoutjs.com), [Underscore](http://documentcloud.github.com/underscore), [Bootstrap](http://twitter.github.com/bootstrap) and [Postgres](http://postgresql.org).
+          
+          All code is open sourced using an [MIT license](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) and can be found on [GitHub](http://github.com/robertsosinski/kiv7).
+          
+          __NOTICE:__ This website is a technology demo, any data you put into this application can be lost at any time.
+          
+        modals:
+          error:
+            header: Error
+    
+    pages:
+      welcome:
+        header: Welcome!
+        body: |
+          This is a __demo__ showcasing how open-source tools can be used to build an interactive web-based application in multiple languages. Take a look at the page footer to see what projects make up this application and others like it.
+          
+          Feel free to __sign up__ and take this thing for a spin.
+
+    lists:
+      show:
+        list:
+          name: Your List
+          is_complete: is complete
+        task:
+          placeholder: Enter a unique name!
+        new_task:
+          placeholder: What needs to be done?

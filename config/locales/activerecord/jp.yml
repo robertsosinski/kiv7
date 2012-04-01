@@ -1,0 +1,18 @@
+jp:
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            name:
+              blank: 名前は必須です
+              taken: 名前は一意である必要があります
+        user:
+          attributes:
+            username:
+              blank: ログインが必要です
+              taken: ログインは一意である必要があります
+              invalid: ログインは少なくとも6文字と数字でなければなりません
+            password:
+              blank: パスワードが必要です
+              invalid: "パスワードは少なくとも6文字、数字、特殊文字でなければなりません"

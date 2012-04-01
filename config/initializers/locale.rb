@@ -1,0 +1,1 @@
+I18n.load_path += Dir[Rails.root.join('config', 'locales', '{activerecord,admin,api,root,simple_form}', '*.{rb,yml}')]

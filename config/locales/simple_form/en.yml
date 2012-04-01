@@ -1,0 +1,10 @@
+en:
+  simple_form:
+    labels:
+      user:
+        username: Username
+        password: Password
+
+      session:
+        username: Username
+        password: Password
