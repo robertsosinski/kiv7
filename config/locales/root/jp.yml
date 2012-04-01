@@ -1,5 +1,8 @@
 jp:
   root:
+    words:
+      or: または
+      
     layouts:
       namespace:
         language: 言語

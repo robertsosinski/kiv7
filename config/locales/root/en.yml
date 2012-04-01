@@ -1,5 +1,8 @@
 en:
   root:
+    words:
+      or: or
+    
     layouts:
       namespace:
         language: Language
