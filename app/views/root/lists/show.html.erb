@@ -4,9 +4,14 @@
       <%= t '.list.name' %>
       <small>
         <span data-bind="visible: incompleteTasks().length > 0">
-          
-          has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
-          
+          <% case I18n.locale %>
+          <% when :en %>
+            has <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'task' : 'tasks'"></span> left
+          <% when :fr %>
+            a <span data-bind="text: incompleteTasks().length"></span> <span data-bind="text: incompleteTasks().length == 1 ? 'tâche  à gauche' : 'tâches laissées'"></span>
+          <% when :jp %>
+            には　<span data-bind="text: incompleteTasks().length"></span>　タスクがあります
+          <% end %>
         </span>
         
         <span data-bind="visible: incompleteTasks().length == 0"><%= t '.list.is_complete' %></span>

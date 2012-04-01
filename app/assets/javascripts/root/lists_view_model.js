@@ -48,7 +48,7 @@ Root.ListsViewModel = function() {
       self.newTask.name("");
     },
     function(error) {
-      Root.modalsViewModel.render("Error", error);
+      Root.modalsViewModel.error.render(error);
     });
   };
   

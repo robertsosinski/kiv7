@@ -17,7 +17,7 @@ class Root::NamespaceController < ApplicationController
   
   def check_authentication
     unless warden.authenticated?
-      flash[:notice] = "You have to login before you can access your task list."
+      flash[:notice] = t('root.flash.notice.login_required')
       redirect_to new_sessions_path
     end
   end

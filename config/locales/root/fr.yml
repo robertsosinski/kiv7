@@ -1,9 +1,20 @@
 fr:
   root:
-    words:
+    word:
       or: ou
       task: tâche
       tasks: tâches
+      
+    flash:
+      success:
+        welcome: "Hé %{username} bienvenue à Kiv7!"
+        welcome_back: "Accueillir à nouveau %{username}."
+      notice:
+        goodbye: Merci d'être passé par.
+        login_required: Vous devez vous connecter avant de pouvoir accéder à votre liste de tâches.
+      error:
+        invalid_username_or_password: Nom d'utilisateur ou mot de passe non valide.
+        something_else: Quelque chose s'est mal passé, s'il vous plaît essayez de nouveau.
     
     layouts:
       namespace:
@@ -21,6 +32,10 @@ fr:
           Tout le code est open source en utilisant un [licence MIT](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) et peut être trouvée sur [GitHub](http://github.com/robertsosinski/kiv7).
           
           __AVIS:__ Ce site est une démo technologique, toutes les données que vous mettez dans cette application peut être perdu à tout moment.
+          
+        modals:
+          error:
+            header: Erreur
     
     pages:
       welcome:

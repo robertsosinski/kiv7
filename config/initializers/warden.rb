@@ -18,6 +18,6 @@ Warden::Strategies.add(:username_password) do
 
   def authenticate!
     user = User.authenticate(params["session"]["username"], params["session"]["password"])
-    user ? success!(user) : fail!("Invalid username and/or password.")
+    user ? success!(user) : fail!(:invalid_username_or_password)
   end
 end
