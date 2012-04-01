@@ -14,7 +14,14 @@ fr:
         logout: "Déconnexion (%{username})"
         signup: Inscription
         signup_blurb: si vous n'avez pas encore de compte
-        
+        footer_title: Kiv7 - La liste des tâches simples
+        footer_blurb: |
+          Construit par [Robert Sosinski](http://www.robertsosinski.com) en utilisant [Ruby on Rails](http://rubyonrails.org), [jQuery](http://jquery.com), [Knockout](http://knockoutjs.com), [Underscore](http://documentcloud.github.com/underscore), [Bootstrap](http://twitter.github.com/bootstrap) et [Postgres](http:// postgresql.org).
+          
+          Tout le code est open source en utilisant un [licence MIT](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) et peut être trouvée sur [GitHub](http://github.com/robertsosinski/kiv7).
+          
+          __AVIS:__ Ce site est une démo technologique, toutes les données que vous mettez dans cette application peut être perdu à tout moment.
+    
     pages:
       welcome:
         header: "Bienvenu!"

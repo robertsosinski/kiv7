@@ -14,7 +14,14 @@ jp:
         logout: "ログアウト (%{username})"
         signup: サインアップ
         signup_blurb: あなたはまだアカウントをお持ちでいない場合
-      
+        footer_title: Kiv7 - シンプルなタスクリスト
+        footer_blurb: |
+          [Robert Sosinski](http://www.robertsosinski.com)　によって書かれた　[Ruby on Rails](http://rubyonrails.org)、 [jQuery](http://jquery.com)、 [Knockout](http://knockoutjs.com)、 [Underscore](http://documentcloud.github.com/underscore)、 [Bootstrap](http://twitter.github.com/bootstrap) と [Postgres](http://postgresql.org)　です。
+          
+          すべてのコードはオープン[MITライセンス](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) を使用して取り込まれ [GitHubに](http://github.com/robertsosinski/kiv7) に記載されています。
+          
+          __注意：__ このサイトは技術デモでは、このアプリケーションに置かれた任意のデータはいつでも失われる可能性があります。
+    
     pages:
       welcome:
         header: ようこそ!
