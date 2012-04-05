@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.2'
 
 gem 'pg'
+gem 'haml', '~> 3.1.4'
 gem 'json'
 gem 'rjson'
 gem 'redcarpet', '~> 2.1.1'

@@ -26,7 +26,7 @@ en:
         signup: Signup
         signup_blurb: if you don't have an account yet
         footer_title: Kiv7 - The Simple Task List
-        footer_blurb: |
+        footer_markdown: |
           Built by [Robert Sosinski](http://www.robertsosinski.com) using [Ruby on Rails](http://rubyonrails.org), [jQuery](http://jquery.com), [Knockout](http://knockoutjs.com), [Underscore](http://documentcloud.github.com/underscore), [Bootstrap](http://twitter.github.com/bootstrap) and [Postgres](http://postgresql.org).
           
           All code is open sourced using an [MIT license](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) and can be found on [GitHub](http://github.com/robertsosinski/kiv7).
@@ -49,6 +49,8 @@ en:
       show:
         list:
           name: Your List
+          has_items_html: |
+            has <@= incompleteTasks().length @> <@= incompleteTasks().length == 1 ? "task" : "tasks" @> left
           is_complete: is complete
         task:
           placeholder: Enter a unique name!

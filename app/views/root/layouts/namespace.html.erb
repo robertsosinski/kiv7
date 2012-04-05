@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
 <head>
   <title>Kiv7</title>
   <%= stylesheet_link_tag    "application", "root", :media => "all" %>
@@ -37,7 +37,7 @@
     <footer class="footer">
       <%= link_to t('root.layouts.namespace.footer_title'), root_path, :class => "pull-right" %>
       
-      <%= m t 'root.layouts.namespace.footer_blurb' %>
+      <%= t 'root.layouts.namespace.footer_markdown' %>
     </footer>
   </div>
   

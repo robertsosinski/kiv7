@@ -54,6 +54,7 @@ GEM
       factory_girl (~> 2.6.0)
       railties (>= 3.0.0)
     git (1.2.5)
+    haml (3.1.4)
     hike (1.2.1)
     i18n (0.6.0)
     jeweler (1.8.3)
@@ -143,6 +144,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   factory_girl_rails
+  haml (~> 3.1.4)
   json
   less (~> 2.0.10)
   pg

@@ -15,7 +15,7 @@ jp:
       error:
         invalid_username_or_password: 無効なユーザー名またはパスワードを入力します。
         something_else: 何かが間違っていた、もう一度試してください。
-      
+    
     layouts:
       namespace:
         language: 言語
@@ -26,7 +26,7 @@ jp:
         signup: サインアップ
         signup_blurb: あなたはまだアカウントをお持ちでいない場合
         footer_title: Kiv7 - シンプルなタスクリスト
-        footer_blurb: |
+        footer_markdown: |
           [Robert Sosinski](http://www.robertsosinski.com)　によって書かれた　[Ruby on Rails](http://rubyonrails.org)、 [jQuery](http://jquery.com)、 [Knockout](http://knockoutjs.com)、 [Underscore](http://documentcloud.github.com/underscore)、 [Bootstrap](http://twitter.github.com/bootstrap) と [Postgres](http://postgresql.org)　です。
           
           すべてのコードはオープン[MITライセンス](http://github.com/robertsosinski/kiv7/blob/master/LICENSE) を使用して取り込まれ [GitHubに](http://github.com/robertsosinski/kiv7) に記載されています。
@@ -49,6 +49,8 @@ jp:
       show:
         list:
           name: あなたのリスト
+          has_items_html: |
+            <@= incompleteTasks().length @> タスクがあります
           is_complete: が完了しました
         task:
           placeholder: 一意の名前を入力してください！

@@ -1,6 +1,6 @@
 Kiv7::Application.routes.draw do
   scope :module => :root do
-    root :to => 'pages#home'
+    root :to => 'pages#home' # redirect to localized welcome page
     
     scope ':locale', :locale => /en|fr|jp/ do
       root :to => 'pages#welcome'

@@ -1,0 +1,31 @@
+#lists-view
+  .page-header
+    %h1
+      = t '.list.name'
+      %small
+        %span(data-bind="visible: incompleteTasks().length == 0")= t('.list.is_complete')
+        %span(data-bind="visible: incompleteTasks().length > 0, template: { name: 'has_items_html' }")
+        %script#has_items_html(type="text/html")= t('.list.has_items_html')
+
+  .control-group
+    %form#new-task(data-bind="submit: createTask")
+      %span.input-prepend
+        %a.add-on.btn(data-bind="click: createTask" href="#")
+          %i.icon-plus
+        %a.add-on.btn(data-bind="click: function() { newTask.name('') }" href="#")
+          %i.icon-repeat
+
+        .control-group
+          %input.span11(data-bind="value: newTask.name"){:placeholder => t('.new_task.placeholder')}
+
+  #tasks.control-group(data-bind="foreach: tasks")
+    %span.input-prepend
+      %a.add-on.btn(data-bind="click: $root.toggleTask" href="#")
+        %i(data-bind="star: done")
+      %a.add-on.btn(data-bind="click: $root.destroyTask" href="#")
+        %i.icon-remove
+      .control-group(data-bind="valid: name.isValid")
+        %input.name.span11(data-bind="value: name, disable: done, event: { change: $root.updateTask }"){:placeholder => t('.task.placeholder')}
+
+- content_for :bindings do
+  ko.applyBindings(Root.listsViewModel = new Root.ListsViewModel(), ko.element("lists-view"));
