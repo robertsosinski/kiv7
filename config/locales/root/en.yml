@@ -40,7 +40,7 @@ en:
     pages:
       welcome:
         header: Welcome!
-        body: |
+        body_markdown: |
           This is a __demo__ showcasing how open-source tools can be used to build an interactive web-based application in multiple languages. Take a look at the page footer to see what projects make up this application and others like it.
           
           Feel free to __sign up__ and take this thing for a spin.

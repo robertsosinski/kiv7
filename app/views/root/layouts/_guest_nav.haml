@@ -1,0 +1,10 @@
+.navbar-inner
+  .container
+    = link_to "Kiv7", root_path, :class => "brand"
+    = render :partial => 'root/layouts/locale'
+    
+    %ul.nav.pull-right
+      %li
+        = link_to t('root.layouts.namespace.login'), new_sessions_path
+      %li
+        = link_to t('root.layouts.namespace.signup'), new_users_path

@@ -1,0 +1,15 @@
+#modals-view
+  #modal-error.modal(style="display: none;")
+    .modal-header
+      %a.close(data-dismiss="modal" href="#") ×
+      %h3= t 'root.layouts.namespace.modals.error.header'
+
+    .modal-body
+      %ul(data-bind="foreach: error.body")
+        %li(data-bind="text: $data")
+
+    .modal-footer
+      %a.btn(data-dismiss="modal" href="#") Close
+
+- content_for :bindings do
+  ko.applyBindings(Root.modalsViewModel = new Root.ModalsViewModel(), ko.element("modals-view"));

@@ -1,0 +1,20 @@
+%ul.nav
+  %li.dropdown
+    %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+      = flag_tag I18n.locale
+      = t 'root.layouts.namespace.language'
+      %b.caret
+      
+    %ul.dropdown-menu
+      %li
+        %a{:href => url_for(params.merge(:locale => :en))}
+          = flag_tag(:en)
+          English
+      %li
+        %a{:href => url_for(params.merge(:locale => :fr))}
+          = flag_tag(:fr)
+          Français
+      %li
+        %a{:href => url_for(params.merge(:locale => :jp))}
+          = flag_tag(:jp)
+          日本語

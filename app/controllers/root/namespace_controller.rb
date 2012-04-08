@@ -10,7 +10,7 @@ class Root::NamespaceController < ApplicationController
     session[:locale] = I18n.locale = params[:locale] || I18n.default_locale
   end
   
-  # Used to set the locale namespace.
+  # used to set the locale namespace.
   def default_url_options(options={})
     { :locale => I18n.locale }
   end

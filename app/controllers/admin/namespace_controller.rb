@@ -6,8 +6,14 @@ class Admin::NamespaceController < ApplicationController
   
   protected
   
+  # used to set the locale namespace.
+  def default_url_options(options={})
+    { :locale => session[:locale] }
+  end
+  
   def check_authentication
-    if !warden.authenticated? || !warden.user.admin?
+    if warden.user && warden.user.admin?
+    else
       flash[:notice] = "Nothing to see here, move along!"
       
       if warden.authenticated?

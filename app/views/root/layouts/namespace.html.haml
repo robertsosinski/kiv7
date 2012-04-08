@@ -1,0 +1,38 @@
+!!!
+%html{:lang => I18n.locale}
+  %head
+    %title Kiv7
+  
+    = stylesheet_link_tag    "application", "root", :media => "all"
+    = javascript_include_tag "application", "root"
+    = csrf_meta_tags
+
+  %body
+    #navbar.navbar.navbar-fixed-top
+      - if warden.authenticated?
+        - if warden.user.admin?
+          = render :partial => 'root/layouts/admin_nav'
+        - else
+          = render :partial => 'root/layouts/user_nav'
+      - else
+        = render :partial => 'root/layouts/guest_nav'
+
+    #content.container
+      - if flash.any?
+        - flash.each do |type, message|
+          = content_tag :div, :class => ["alert", "alert-#{type}"] do
+            %a.close(data-dismiss="alert") x
+            %strong= message
+
+      = yield
+
+      %footer.footer
+        = link_to t('root.layouts.namespace.footer_title'), root_path, :class => "pull-right"
+        = t 'root.layouts.namespace.footer_markdown'
+
+    = render :partial => 'root/layouts/modals'
+
+    :javascript
+      $(function() {
+         #{yield :bindings}
+      });

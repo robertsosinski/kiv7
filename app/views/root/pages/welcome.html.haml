@@ -1,0 +1,11 @@
+.page-header.no-border
+  .hero-unit
+    %h1= t '.header'
+    = t '.body_markdown'
+
+    %br/
+
+    %p
+      = link_to t('root.layouts.namespace.signup'), new_users_path, :class => "btn btn-primary btn-large"
+      %span.welcome-or= t 'root.word.or'
+      = link_to t('root.layouts.namespace.login'), new_sessions_path, :class => "btn btn-large"
