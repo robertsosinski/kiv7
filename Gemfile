@@ -16,6 +16,10 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'simple_form', '~> 2.0.1'
 gem 'whenever', :require => false
 
+group :test, :development do
+  gem 'jslint_on_rails', '1.0.7'
+end
+
 group :assets do
   gem 'less', '~> 2.0.10'
   gem 'uglifier'

@@ -1,15 +1,17 @@
 #modals-view
-  #modal-error.modal(style="display: none;")
-    .modal-header
+  #modal-error.modal(data-bind="with: error" style="display: none")
+    .modal-header()
       %a.close(data-dismiss="modal" href="#") ×
       %h3= t 'root.layouts.namespace.modals.error.header'
 
     .modal-body
-      %ul(data-bind="foreach: error.body")
+      %ul(data-bind="foreach: errors")
         %li(data-bind="text: $data")
 
     .modal-footer
       %a.btn(data-dismiss="modal" href="#") Close
+      %a.btn(data-bind="click: $root.hide" href="#") Close with KO
+      %a.btn.btn-primary(data-bind="click: log" href="#") Info from console.log
 
 - content_for :bindings do
   ko.applyBindings(Root.modalsViewModel = new Root.ModalsViewModel(), ko.element("modals-view"));

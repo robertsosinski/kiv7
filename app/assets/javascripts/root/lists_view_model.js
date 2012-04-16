@@ -3,8 +3,9 @@ Root.ListsViewModel = function() {
   
   self.Task = function(data, opts) {
     var self = this;
-    var data = data || {};
-    var opts = opts || {};
+    
+    data = data || {};
+    opts = opts || {};
     
     self.id   = data.id;
     self.name = ko.observable(data.name).extend({
@@ -21,7 +22,7 @@ Root.ListsViewModel = function() {
   
   api.v1.tasks.index(function(json) {
     self.tasks(_.map(json.data, function(task) { 
-      return new self.Task(task, {scope: self.tasks}) 
+      return new self.Task(task, {scope: self.tasks});
     }));
   });
   
@@ -59,7 +60,7 @@ Root.ListsViewModel = function() {
   
   self.updateTask = function(task) {
     if (task.name.isValid()) {
-      api.v1.tasks.update(task.id, { task: ko.toJS(task) })
+      api.v1.tasks.update(task.id, { task: ko.toJS(task) });
     }
   };
   

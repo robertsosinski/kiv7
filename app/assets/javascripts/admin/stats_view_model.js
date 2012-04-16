@@ -8,7 +8,7 @@ Admin.StatsViewModel = function() {
     {day: "Wednesday", up: ko.observable(true)},
     {day: "Thursday",  up: ko.observable(false)},
     {day: "Friday",    up: ko.observable(true)},
-    {day: "Saturday",  up: ko.observable(true)},
+    {day: "Saturday",  up: ko.observable(true)}
   ]);
 };
 

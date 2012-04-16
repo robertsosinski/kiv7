@@ -63,6 +63,7 @@ GEM
       rake
       rdoc
     journey (1.0.3)
+    jslint_on_rails (1.0.7)
     json (1.6.5)
     less (2.0.11)
       commonjs (~> 0.2.0)
@@ -145,6 +146,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   factory_girl_rails
   haml (~> 3.1.4)
+  jslint_on_rails (= 1.0.7)
   json
   less (~> 2.0.10)
   pg
