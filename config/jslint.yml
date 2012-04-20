@@ -35,7 +35,7 @@ white:    false     # true if strict whitespace rules apply (see also 'indent' o
 # "allow" type options (false means potentially more warnings)
 
 cap:      false     # true if upper case HTML should be allowed
-css:      true      # true if CSS workarounds should be tolerated
+css:      false     # true if CSS workarounds should be tolerated
 debug:    false     # true if debugger statements should be allowed (set to false before going into production)
 es5:      false     # true if ECMAScript 5 syntax should be allowed
 evil:     false     # true if eval should be allowed
@@ -43,11 +43,11 @@ forin:    true      # true if unfiltered 'for in' statements should be allowed
 fragment: true      # true if HTML fragments should be allowed
 laxbreak: false     # true if statement breaks should not be checked
 on:       false     # true if HTML event handlers (e.g. onclick="...") should be allowed
-sub:      false     # true if subscript notation may be used for expressions better expressed in dot notation
+sub:      true      # true if subscript notation may be used for expressions better expressed in dot notation
 
 # other options
 
-maxlen:   200       # Maximum line length
+maxlen:   120       # Maximum line length
 indent:   2         # Number of spaces that should be used for indentation - used only if 'white' option is set
 maxerr:   50        # The maximum number of warnings reported (per file)
 passfail: false     # true if the scan should stop on first error (per file)

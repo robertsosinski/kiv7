@@ -16,6 +16,17 @@ Root.ListsViewModel = function() {
     
     self.done = ko.observable(data.done);
     self.open = ko.computed(function() { return !self.done(); });
+
+    self.toggleTask = function(task) {
+      api.v1.tasks.toggle(task.id);
+      task.done(!task.done());
+    };
+
+    self.updateTask = function(task) {
+      if (task.name.isValid()) {
+        api.v1.tasks.update(task.id, { task: ko.toJS(task) });
+      }
+    };
   };
   
   self.tasks = ko.observableArray([]);
@@ -52,18 +63,7 @@ Root.ListsViewModel = function() {
       Root.modalsViewModel.error.render(error);
     });
   };
-  
-  self.toggleTask = function(task) {
-    api.v1.tasks.toggle(task.id);
-    task.done(!task.done());
-  };
-  
-  self.updateTask = function(task) {
-    if (task.name.isValid()) {
-      api.v1.tasks.update(task.id, { task: ko.toJS(task) });
-    }
-  };
-  
+
   self.destroyTask = function(task) {
     api.v1.tasks.destroy(task.id, function() {
       self.tasks.remove(task);
