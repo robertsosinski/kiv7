@@ -1,0 +1,6 @@
+fr:
+  root:
+    users:
+      new:
+        signup: Inscription
+        signup_blurb: si vous n'avez pas encore de compte

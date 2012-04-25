@@ -1,0 +1,9 @@
+fr:
+  root:
+    layouts:
+      navbar:
+        language: Langue
+        lists: Liste
+        login: Vous connecter
+        logout: "Déconnexion (%{username})"
+        signup: Inscription

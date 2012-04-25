@@ -1,0 +1,9 @@
+fr:
+  root:
+    pages:
+      welcome:
+        header: "Bienvenu!"
+        body_markdown: |
+          Il s'agit d'une __démo__ illustrant les outils open-source peut être utilisé pour construire un site Web interactif et internationalisé basé sur l'application. Jetez un oeil à le pied de page pour voir ce que les projets constituent cette demande et d'autres comme lui.
+          
+          N'hésitez pas à vous __inscrire__ et profiter de cette chose pour un spin.

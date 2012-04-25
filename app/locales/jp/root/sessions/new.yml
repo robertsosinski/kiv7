@@ -1,0 +1,6 @@
+jp:
+  root:
+    sessions:
+      new:
+        login: ログイン
+        login_blurb: あなたは既にアカウントを持っている場合

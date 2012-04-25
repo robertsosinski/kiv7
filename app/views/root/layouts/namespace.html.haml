@@ -11,18 +11,14 @@
     #navbar.navbar.navbar-fixed-top
       - if warden.authenticated?
         - if warden.user.admin?
-          = render :partial => 'root/layouts/admin_nav'
+          = render :partial => 'root/layouts/navbar/admin_nav'
         - else
-          = render :partial => 'root/layouts/user_nav'
+          = render :partial => 'root/layouts/navbar/user_nav'
       - else
-        = render :partial => 'root/layouts/guest_nav'
+        = render :partial => 'root/layouts/navbar/guest_nav'
 
     #content.container
-      - if flash.any?
-        - flash.each do |type, message|
-          = content_tag :div, :class => ["alert", "alert-#{type}"] do
-            %a.close(data-dismiss="alert") x
-            %strong= message
+      = render :partial => 'root/layouts/flash', :locals => { :flash => flash }
 
       = yield
 

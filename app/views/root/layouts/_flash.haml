@@ -1,0 +1,5 @@
+- if flash.any?
+  - flash.each do |type, message|
+    = content_tag :div, :class => ["alert", "alert-#{type}"] do
+      %a.close(data-dismiss="alert") x
+      %strong= message

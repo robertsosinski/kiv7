@@ -1,0 +1,9 @@
+jp:
+  root:
+    layouts:
+      navbar:
+        language: 言語
+        lists: リスト
+        login: ログイン
+        logout: "ログアウト (%{username})"
+        signup: サインアップ

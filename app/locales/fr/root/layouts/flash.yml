@@ -1,0 +1,13 @@
+fr:
+  root:
+    layouts:
+      flash:
+        success:
+          welcome: "Hé %{username} bienvenue à Kiv7!"
+          welcome_back: "Accueillir à nouveau %{username}."
+        notice:
+          goodbye: Merci d'être passé par.
+          login_required: Vous devez vous connecter avant de pouvoir accéder à votre liste de tâches.
+        error:
+          invalid_username_or_password: Nom d'utilisateur ou mot de passe non valide.
+          something_else: Quelque chose s'est mal passé, s'il vous plaît essayez de nouveau.

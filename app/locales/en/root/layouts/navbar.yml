@@ -1,0 +1,9 @@
+en:
+  root:
+    layouts:
+      navbar:
+        language: Language
+        lists: List
+        login: Login
+        logout: "Logout (%{username})"
+        signup: Signup

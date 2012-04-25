@@ -1,0 +1,6 @@
+en:
+  root:
+    sessions:
+      new:
+        login: Login
+        login_blurb: if you already have an account

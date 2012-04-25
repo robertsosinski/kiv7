@@ -1,0 +1,6 @@
+fr:
+  root:
+    sessions:
+      new:
+        login: Vous connecter
+        login_blurb: si vous avez déjà un compte

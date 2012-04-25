@@ -1,0 +1,6 @@
+jp:
+  root:
+    users:
+      new:
+        signup: サインアップ
+        signup_blurb: あなたはまだアカウントをお持ちでいない場合

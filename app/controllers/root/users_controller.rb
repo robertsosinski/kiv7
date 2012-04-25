@@ -10,14 +10,14 @@ class Root::UsersController < Root::NamespaceController
     
     if @user.save
       warden.set_user(@user)
-      flash[:success] = t('root.flash.success.welcome', :username => warden.user.username)
+      flash[:success] = t('root.layouts.flash.success.welcome', :username => warden.user.username)
       
       redirect_to lists_path
     else
       render :new
     end
   rescue
-    flash.now[:error] = t('root.flash.error.something_else')
+    flash.now[:error] = t('root.layouts.flash.error.something_else')
     render :new
   end
 end

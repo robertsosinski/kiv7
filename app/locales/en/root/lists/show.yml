@@ -1,0 +1,13 @@
+en:
+  root:
+    lists:
+      show:
+        list:
+          name: Your List
+          has_items_html: |
+            has <@= incompleteTasks().length @> <@= incompleteTasks().length == 1 ? "task" : "tasks" @> left
+          is_complete: is complete
+        task:
+          placeholder: Enter a unique name!
+        new_task:
+          placeholder: What needs to be done?

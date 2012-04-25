@@ -1,0 +1,6 @@
+jp:
+  root:
+    layouts:
+      modals:
+        error:
+          header: エラー

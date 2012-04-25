@@ -1,0 +1,13 @@
+jp:
+  root:
+    layouts:
+      flash:
+        success:
+          welcome: "ヘイ%{username}、Kiv7へようこそ！"
+          welcome_back: "ようこそバック%{username}。"
+        notice:
+          goodbye: 立ち寄ってくれてありがとう。
+          login_required: あなたは、あなたのタスクリストにアクセスする前に、ログインする必要があります。
+        error:
+          invalid_username_or_password: 無効なユーザー名またはパスワードを入力します。
+          something_else: 何かが間違っていた、もう一度試してください。

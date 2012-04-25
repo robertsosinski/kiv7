@@ -1,0 +1,13 @@
+fr:
+  root:
+    lists:
+      show:
+        list:
+          name: Votre Liste
+          has_items_html: |
+            a <@= incompleteTasks().length @> <@= incompleteTasks().length == 1 ? "tâche  à gauche" : "tâches laissées" @>
+          is_complete: est terminée
+        task:
+          placeholder: Entrez un nom unique!
+        new_task:
+          placeholder: Qu'est-ce qui doit être fait?

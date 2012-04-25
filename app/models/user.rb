@@ -7,11 +7,11 @@ class User < ActiveRecord::Base
   
   validates :username, :presence => true, 
                        :uniqueness => true, 
-                       :format => { :with => /^[a-z0-9]{3,10}$/, :message => "must be 3 to 10 lower-case letters or numbers" }
+                       :format => { :with => /^[a-z0-9]{3,10}$/ }
   
   validates :password, :presence => true, 
                        :confirmation => true,
-                       :format => { :with => /^([\x20-\x7E]){6,}$/, :message => "must be 3 or more characters" }
+                       :format => { :with => /^([\x20-\x7E]){6,}$/ }
   
   
   def self.authenticate(username, password)

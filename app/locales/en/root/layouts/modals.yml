@@ -1,0 +1,6 @@
+en:
+  root:
+    layouts:
+      modals:
+        error:
+          header: Error
