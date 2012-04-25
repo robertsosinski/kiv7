@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'when a user goes to the welcome page', :js => true do
+describe 'when a user goes to the welcome page' do
   describe 'from the root path' do
     before do
       visit '/'

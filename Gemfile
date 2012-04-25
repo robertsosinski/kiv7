@@ -18,6 +18,7 @@ gem 'whenever', :require => false
 
 group :test, :development do
   gem 'jslint_on_rails', '1.0.7'
+  gem 'ruby-debug19'
 end
 
 group :assets do

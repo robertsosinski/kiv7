@@ -21,6 +21,10 @@ describe 'when a user goes to the login page' do
       specify 'he should go to the list page' do
         current_path.should eql lists_path(:locale => 'en')
       end
+      
+      specify 'he should see a flash welcoming him back' do
+        find '.alert-success', :text => "Welcome back"
+      end
     end
 
     describe 'with an incorrect username' do
@@ -38,7 +42,7 @@ describe 'when a user goes to the login page' do
       end
 
       specify 'he should see a flash notifiying him of incorrect credentials' do
-        find '.alert strong', :text => "Invalid username or password."
+        find '.alert-error', :text => "Invalid username or password."
       end
     end
 
@@ -57,7 +61,7 @@ describe 'when a user goes to the login page' do
       end
 
       specify 'he should see a flash notifiying him of incorrect credentials' do
-        find '.alert strong', :text => "Invalid username or password."
+        find '.alert-error', :text => "Invalid username or password."
       end
     end
 
@@ -76,7 +80,7 @@ describe 'when a user goes to the login page' do
       end
 
       specify 'he should see a flash notifiying him of incorrect credentials' do
-        find '.alert strong', :text => "Invalid username or password."
+        find '.alert-error', :text => "Invalid username or password."
       end
     end
   end
