@@ -18,6 +18,7 @@ gem 'whenever', :require => false
 
 group :test, :development do
   gem 'jslint_on_rails', '1.0.7'
+  gem 'quiet_assets'
   gem 'ruby-debug19'
 end
 
@@ -28,8 +29,10 @@ end
 
 group :test do
   gem 'rspec-rails', :git => 'git://github.com/rspec/rspec-rails.git', :ref => 'v2.9.0.rc2'
+  gem 'cucumber-rails'
   gem 'capybara'
   gem 'capybara-webkit'
   gem 'launchy'
   gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
