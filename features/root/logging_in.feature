@@ -11,7 +11,7 @@ Feature: Logging in
     And entering a valid password
     And submiting their credentials
     Then the user should be sent to the list page
-    And a welcome message should be displayed
+    And a welcome back message should be displayed
 
   Scenario: Logging in with a valid username but an invalid password.
     When entering a valid username

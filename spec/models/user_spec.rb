@@ -61,8 +61,8 @@ describe User do
   
   describe '.authenticate' do
     before do
-      @alice = Factory(:user, :username => 'alice')
-      @bob   = Factory(:user, :username => 'bob', :password => 'password')
+      @alice = create(:user, :username => 'alice')
+      @bob   = create(:user, :username => 'bob', :password => 'password')
     end
     
     let(:alice) { @alice }
@@ -100,7 +100,7 @@ describe User do
   end
   
   describe '#authenticate' do
-    let(:user) { Factory(:user) }
+    let(:user) { create(:user) }
     
     context 'when passed the correct password' do
       it 'should return true' do
