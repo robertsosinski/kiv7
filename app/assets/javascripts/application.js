@@ -4,6 +4,7 @@
 //= require knockout-2.0.0
 //= require knockout-validations-0.9
 //= require rails-ujs-2.0.2
+//= require no-click-delay
 
 //= require cookies
 

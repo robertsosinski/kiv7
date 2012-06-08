@@ -8,27 +8,31 @@
     = csrf_meta_tags
 
   %body
-    #navbar.navbar.navbar-fixed-top
-      - if warden.authenticated?
-        - if warden.user.admin?
-          = render :partial => 'root/layouts/navbar/admin_nav'
+    #wrapper
+      #navbar.navbar.navbar-fixed-top
+        - if warden.authenticated?
+          - if warden.user.admin?
+            = render :partial => 'root/layouts/navbar/admin_nav'
+          - else
+            = render :partial => 'root/layouts/navbar/user_nav'
         - else
-          = render :partial => 'root/layouts/navbar/user_nav'
-      - else
-        = render :partial => 'root/layouts/navbar/guest_nav'
+          = render :partial => 'root/layouts/navbar/guest_nav'
 
-    #content.container
-      = render :partial => 'root/layouts/flash', :locals => { :flash => flash }
+      #content.container
+        = render :partial => 'root/layouts/flash', :locals => { :flash => flash }
 
-      = yield
+        = yield
 
-      %footer.footer
-        = link_to t('root.layouts.namespace.footer_title'), root_path, :class => "pull-right"
-        = t 'root.layouts.namespace.footer_markdown'
+        %footer.footer
+          = link_to t('root.layouts.namespace.footer_title'), root_path, :class => "pull-right"
+          = t 'root.layouts.namespace.footer_markdown'
 
-    = render :partial => 'root/layouts/modals'
+      = render :partial => 'root/layouts/modals'
 
     :javascript
       $(function() {
+          // This disables the 300ms click delay on mobile browsers.
+          new NoClickDelay(document.getElementById('wrapper'));
+         
          #{yield :bindings}
       });
